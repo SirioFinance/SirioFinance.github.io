@@ -420,7 +420,7 @@ body .fourth-container .title-container h1 {
 
 body .fourth-container .mobile-screen-container {
   display: none;
-  padding: 20px;
+  padding: 50px 20px;
 }
 
 body .fourth-container .mobile-screen-container button {
@@ -454,14 +454,10 @@ body .fourth-container .mobile-screen-container button {
     right: 0;
     overflow: scroll;
     display: none;
-    padding: 0 0 50px;
-    margin-top: 75px;
+    z-index: 10;
   }
   body .fourth-container .popup-container .popup-button-container {
     display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     padding: 20px 30px;
   }

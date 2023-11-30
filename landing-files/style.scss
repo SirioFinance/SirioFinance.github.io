@@ -333,7 +333,7 @@ body {
 		}
 		.mobile-screen-container {
 			display: none;
-			padding: 20px;
+			padding: 50px 20px;
 
 			button {
 				width: 200px;
@@ -354,9 +354,6 @@ body {
 			.popup-container {
 				.popup-button-container {
 					display: block;
-					position: fixed;
-					top: 0;
-					left: 0;
 					width: 100%;
 					padding: 20px 30px;
 				}
@@ -376,8 +373,10 @@ body {
 				right: 0;
 				overflow: scroll;
 				display: none;
-				padding: 0 0 50px;
-				margin-top: 75px;
+				// margin-top: 95px;
+				z-index: 10;
+				// margin-bottom: 30px;
+				// padding-bottom: 30px;
 				.timeline {
 					padding: 20px;
 				}

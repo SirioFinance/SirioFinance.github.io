@@ -61,15 +61,24 @@ window.onbeforeunload = function () {
 document.getElementById("popup-btn").addEventListener("click", () => {
 	document.querySelector(".mobile-screen-container").style.display =
 		"none";
+	fourthContainer.style.height = "100vh";
+	fourthContainer.scrollIntoView(true);
 	document.querySelector(".popup-container").style.display = "block";
 	document.body.style.overflow = "hidden";
 	popupActive = true;
+	cards = document.querySelectorAll(".card");
+	cards.forEach((el) => {
+		el.classList.remove("show");
+		el.classList.add("show");
+	});
 });
 document
 	.getElementById("popup-close-btn")
 	.addEventListener("click", () => {
 		document.querySelector(".mobile-screen-container").style.display =
 			"flex";
+		fourthContainer.style.height = "100%";
+		fourthContainer.style.opacity = 1;
 		document.querySelector(".popup-container").style.display = "none";
 		document.body.style.overflow = "scroll";
 		popupActive = false;
