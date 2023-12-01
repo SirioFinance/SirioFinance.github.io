@@ -269,21 +269,13 @@ body .inner-container .content-container .main-content .image-container img {
   }
 }
 
-body .inner-container.active {
-  -webkit-animation: fade-in 1s ease-in-out forwards 0.5s;
-          animation: fade-in 1s ease-in-out forwards 0.5s;
-}
-
-body .inner-container.hide {
-  -webkit-animation: fade-out 1s ease-in-out forwards;
-          animation: fade-out 1s ease-in-out forwards;
-}
-
 body .first-container {
   position: relative;
   padding: 20px;
   height: 100vh;
   opacity: 1;
+  -webkit-animation: fade-in 2500ms ease-in-out;
+          animation: fade-in 2500ms ease-in-out;
 }
 
 @media screen and (max-width: 450px) {
@@ -830,4 +822,40 @@ body .sixth-container .footer-container .footer-content img {
 
 body .sixth-container .footer-container .footer-content a {
   color: white;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0;
+  }
 }
