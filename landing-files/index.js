@@ -62,6 +62,7 @@ document.getElementById("popup-btn").addEventListener("click", () => {
 	document.querySelector(".mobile-screen-container").style.display =
 		"none";
 	fourthContainer.style.height = "100vh";
+	fourthContainer.style.paddingBottom = "0px";
 	fourthContainer.scrollIntoView(true);
 	document.querySelector(".popup-container").style.display = "block";
 	document.body.style.overflow = "hidden";
@@ -79,6 +80,7 @@ document
 			"flex";
 		fourthContainer.style.height = "100%";
 		fourthContainer.style.opacity = 1;
+		fourthContainer.style.paddingBottom = "180px";
 		document.querySelector(".popup-container").style.display = "none";
 		document.body.style.overflow = "scroll";
 		popupActive = false;
@@ -93,6 +95,15 @@ const thirdContainer = document.getElementById("2-container");
 const fourthContainer = document.getElementById("3-container");
 const fifthContainer = document.getElementById("4-container");
 const sixthContainer = document.getElementById("5-container");
+
+var containerArr = [
+	firstContainer,
+	secondContainer,
+	thirdContainer,
+	fourthContainer,
+	fifthContainer,
+	sixthContainer,
+];
 
 var firstHeight = firstContainer.offsetHeight;
 var secondHeight = secondContainer.offsetHeight;
@@ -133,6 +144,7 @@ const scrolling = (position) => {
 		secondOpc =
 			(secondHeight + firstHeight - position) / secondHeight;
 	}
+
 	if (position < firstHeight + secondHeight) {
 		thirdOpc = position / (firstHeight + secondHeight);
 	} else {
@@ -195,13 +207,24 @@ const scrolling = (position) => {
 			sixthHeight;
 	}
 
-	firstContainer.style.opacity = firstOpc > 0.1 ? firstOpc : 0.1;
-	secondContainer.style.opacity = secondOpc > 0.1 ? secondOpc : 0.1;
-	thirdContainer.style.opacity = thirdOpc > 0.1 ? thirdOpc : 0.1;
-	fourthContainer.style.opacity = fourthOpc > 0.1 ? fourthOpc : 0.1;
-	fifthContainer.style.opacity = fifthOpc > 0.1 ? fifthOpc : 0.1;
-	sixthContainer.style.opacity = sixthOpc > 0.1 ? sixthOpc : 0.1;
-	sixthContainer.style.opacity = sixthOpc > 0.8 ? 1 : sixthOpc;
+	opacityArr = [
+		firstOpc,
+		secondOpc,
+		thirdOpc,
+		fourthOpc,
+		fifthOpc,
+		sixthOpc,
+	];
+
+	for (let i = 0; i < 6; i++) {
+		if (opacityArr[i] < 0.75) {
+			opacityArr[i] = opacityArr[i] * 2 - 0.8;
+			if (opacityArr[i] < 0.1) {
+				opacityArr[i] = 0.1;
+			}
+		}
+		containerArr[i].style.opacity = opacityArr[i];
+	}
 };
 
 window.onscroll = function (e) {

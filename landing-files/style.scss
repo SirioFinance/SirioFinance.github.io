@@ -143,7 +143,7 @@ body {
 	.inner-container {
 		opacity: 0.1;
 		overflow: hidden;
-		padding: 50px 20px;
+		padding: 0px 20px 180px 20px;
 		.content-container {
 			height: 100%;
 			display: flex;
@@ -320,6 +320,9 @@ body {
 			}
 		}
 	}
+	.second-container {
+		padding-top: 50px;
+	}
 	.fourth-container {
 		.main-content {
 			height: 100%;
@@ -345,7 +348,6 @@ body {
 			}
 		}
 		@media screen and (max-width: 730px) {
-			padding: 0;
 			.mobile-screen-container {
 				display: flex;
 				flex-direction: column;
@@ -373,10 +375,8 @@ body {
 				right: 0;
 				overflow: scroll;
 				display: none;
-				// margin-top: 95px;
 				z-index: 10;
-				// margin-bottom: 30px;
-				// padding-bottom: 30px;
+
 				.timeline {
 					padding: 20px;
 				}
@@ -435,19 +435,20 @@ body {
 		.title::before {
 			content: "";
 			position: absolute;
-			width: 24px;
-			height: 24px;
+			width: 16px;
+			height: 16px;
 			background: $primary-col;
 			border-radius: 999px;
-			left: -56.5px;
+			left: -48.5px;
+			top: 5px;
 			transform: translateY(-1px);
 		}
 		.card::after {
 			content: "";
 			position: absolute;
-			top: 0;
-			left: -8.5px;
-			width: 9px;
+			top: 5px;
+			left: -3px;
+			width: 5px;
 			height: 0;
 			background-color: $primary-col;
 			transition: height 0.4s linear 0.5s;

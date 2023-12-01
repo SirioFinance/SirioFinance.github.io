@@ -186,7 +186,7 @@ body .primary-col-text {
 body .inner-container {
   opacity: 0.1;
   overflow: hidden;
-  padding: 50px 20px;
+  padding: 0px 20px 180px 20px;
 }
 
 body .inner-container .content-container {
@@ -405,6 +405,10 @@ body .first-container .show-more p {
   font-weight: bolder;
 }
 
+body .second-container {
+  padding-top: 50px;
+}
+
 body .fourth-container .main-content {
   height: 100%;
 }
@@ -433,9 +437,6 @@ body .fourth-container .mobile-screen-container button {
 }
 
 @media screen and (max-width: 730px) {
-  body .fourth-container {
-    padding: 0;
-  }
   body .fourth-container .mobile-screen-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -545,11 +546,12 @@ body .fourth-container .title {
 body .fourth-container .title::before {
   content: "";
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   background: #3251bf;
   border-radius: 999px;
-  left: -56.5px;
+  left: -48.5px;
+  top: 5px;
   -webkit-transform: translateY(-1px);
           transform: translateY(-1px);
 }
@@ -557,9 +559,9 @@ body .fourth-container .title::before {
 body .fourth-container .card::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: -8.5px;
-  width: 9px;
+  top: 5px;
+  left: -3px;
+  width: 5px;
   height: 0;
   background-color: #3251bf;
   -webkit-transition: height 0.4s linear 0.5s;
