@@ -180,32 +180,24 @@ const scrolling = (position) => {
 				position) /
 			fifthHeight;
 	}
-	if (
-		position <
+
+	console.log(
+		position,
 		firstHeight +
 			secondHeight +
 			thirdHeight +
 			fourthHeight +
 			fifthHeight
-	) {
-		sixthOpc =
-			position /
-			(firstHeight +
-				secondHeight +
-				thirdHeight +
-				fourthHeight +
-				fifthHeight);
-	} else {
-		sixthOpc =
-			(firstHeight +
-				secondHeight +
-				thirdHeight +
-				fourthHeight +
-				fifthHeight +
-				sixthHeight -
-				position) /
-			sixthHeight;
-	}
+	);
+	sixthOpc =
+		position /
+		(firstHeight +
+			secondHeight +
+			thirdHeight +
+			fourthHeight +
+			fifthHeight +
+			500);
+	sixthOpc = sixthOpc > 0.7 ? sixthOpc + 0.1 : sixthOpc;
 
 	opacityArr = [
 		firstOpc,

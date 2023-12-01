@@ -143,7 +143,7 @@ body {
 	.inner-container {
 		opacity: 0.1;
 		overflow: hidden;
-		padding: 0px 20px 180px 20px;
+		padding: 0px 20px 250px 20px;
 		.content-container {
 			height: 100%;
 			display: flex;
@@ -157,13 +157,14 @@ body {
 					.heading-container {
 						.heading {
 							font-family: "Gilroy-Bold", sans-serif;
-							font-size: 64px;
+							font-size: 48px;
 						}
 					}
 					.info-container {
 						margin-top: 20px;
 						.info {
-							font-size: 20px;
+							font-size: 16px;
+							line-height: 24px;
 						}
 						button {
 							font-family: "Gilroy-Bold", sans-serif;
@@ -236,7 +237,7 @@ body {
 			align-items: center;
 			.logo {
 				img {
-					width: 120px;
+					width: 90px;
 				}
 			}
 			.links {
@@ -261,6 +262,7 @@ body {
 					img {
 						margin-right: 30px;
 						height: 20px;
+						width: 20px;
 					}
 				}
 			}
@@ -323,6 +325,11 @@ body {
 	.second-container {
 		padding-top: 50px;
 	}
+	.third-container {
+		.heading {
+			text-align: right;
+		}
+	}
 	.fourth-container {
 		.main-content {
 			height: 100%;
@@ -331,7 +338,6 @@ body {
 			width: 100%;
 			h1 {
 				font-family: "Gilroy-Bold", sans-serif;
-				font-size: 40px;
 			}
 		}
 		.mobile-screen-container {
@@ -391,7 +397,7 @@ body {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			gap: 50px;
+			gap: 40px;
 			.timeline-title {
 				margin-left: 30px;
 				font-family: "Gilroy-Bold", sans-serif;
@@ -413,7 +419,7 @@ body {
 			}
 			position: relative;
 			padding-left: 40px;
-			padding-bottom: 30px;
+			padding-bottom: 20px;
 			color: black;
 			margin: 0;
 		}
@@ -421,9 +427,10 @@ body {
 		.info {
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 5px;
 			p {
-				line-height: 18px;
+				font-size: 16px;
+				line-height: 20px;
 			}
 		}
 
@@ -505,7 +512,6 @@ body {
 	}
 	.sixth-container {
 		padding: 0px;
-		padding-top: 50px;
 		.content-container {
 			height: 100%;
 			width: 100%;
@@ -594,16 +600,17 @@ body {
 				.footer-links {
 					display: flex;
 					flex-direction: row;
-					justify-content: space-between;
+					// justify-content: space-between;
 					margin-bottom: 20px;
-					gap: 20px;
+					gap: 30px;
 					a {
+						// width: 135px;
 						display: block;
 						margin-bottom: 10px;
 					}
 				}
 				img {
-					width: 100px;
+					width: 80px;
 				}
 
 				a {
