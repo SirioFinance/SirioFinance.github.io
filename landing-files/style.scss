@@ -562,10 +562,7 @@ body {
 						a {
 							text-decoration: none;
 						}
-						svg {
-							height: 30px;
-							fill: black;
-						}
+
 						img {
 							height: 25px;
 							width: 25px;
@@ -576,7 +573,7 @@ body {
 			}
 		}
 		.footer-container {
-			margin-top: 30px;
+			margin-top: 60px;
 			width: 100%;
 			background-color: $primary-col;
 			opacity: 1;
@@ -584,29 +581,49 @@ body {
 				max-width: 1000px;
 				margin: auto;
 				color: white;
-				padding: 20px;
+				padding-top: 40px;
 
+				.footer-social {
+					margin-top: 20px;
+					img {
+						height: 24px;
+						width: 24px;
+						margin-right: 15px;
+					}
+				}
 				.footer-text {
 					display: flex;
-					align-items: center;
+					align-items: flex-start;
 					justify-content: space-between;
-					margin-bottom: 40px;
-					gap: 20px;
+					gap: 50px;
+					padding: 20px;
+
+					@media screen and (max-width: 540px) {
+						flex-direction: column;
+					}
 				}
 				.footer-links {
 					display: flex;
 					flex-direction: row;
-					// justify-content: space-between;
 					margin-bottom: 20px;
-					gap: 30px;
+					gap: 60px;
+					h4 {
+						margin-bottom: 20px;
+						color: rgb(232, 232, 232);
+					}
 					a {
-						// width: 135px;
 						display: block;
 						margin-bottom: 10px;
 					}
 				}
+				.text-container {
+					margin-top: 10px;
+					padding: 30px 0;
+					border-top: 1px solid white;
+					text-align: center;
+				}
 				img {
-					width: 80px;
+					width: 120px;
 				}
 
 				a {
