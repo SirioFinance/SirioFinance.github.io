@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Sirio Finance</title>
+		<link rel="stylesheet" href="./landing-files/app.css" />
+		<link
+			rel="shortcut icon"
+			href="./BrandingAssets-main/Brand/Logo.svg"
+			type="image/x-icon"
+		/>
+	</head>
+	<body>
+		<div class="body-container">
+			<div class="content-container">
+				<header>
+					<div class="logo">
+						<img
+							src="./BrandingAssets-main/Brand/Logo.svg"
+							alt="Sirio"
+						/>
+					</div>
+					<nav>
+						<button id="dashboard-btn">Dashboard</button>
+						<button id="markets-btn">Markets</button>
+						<button id="vote-btn">Vote</button>
+					</nav>
+					<div class="button">
+						<button id="connect-wallet-btn" class="primary-btn">
+							Connect Wallet
+						</button>
+					</div>
+				</header>
+
+				<div class="center-net-status">
+					<div class="center-circle">
+						<p>Net Apy</p>
+						<p class="net-value" id="net-value">___</p>
+					</div>
+				</div>
+				<div class="balance-status">
+					<div class="balance-container">
+						<div class="supply-blc-container">
+							<p>Supply Balance</p>
+							<p id="supply-blc" class="balance">$0</p>
+						</div>
+						<div class="collateral-blc-container">
+							<p>Collateral Balance</p>
+							<p id="collateral-blc" class="balance">$0</p>
+						</div>
+						<div class="borrow-blc-container">
+							<p>Borrow Balance</p>
+							<p id="borrow-blc" class="balance">$0</p>
+						</div>
+					</div>
+					<div class="balance-line">
+						<p>Borrow Limit : 20%</p>
+						<div class="line"></div>
+					</div>
+				</div>
+				<div class="markets-status">
+					<div class="markets-container">
+						<div class="supply-market-container markets">
+							<h3 class="table-title">Supply Markets</h3>
+							<div class="market-table supply-table">
+								<div class="table-header">
+									<div class="row header">
+										<div class="cell asset-cell">Asset</div>
+										<div class="cell">Supply APY</div>
+										<div class="cell">Wallet</div>
+										<div class="cell">Collateral</div>
+									</div>
+								</div>
+								<div class="table-data">
+									<div class="row table-data-row">
+										<div class="cell asset-cell">
+											<img
+												src="./BrandingAssets-main/Brand/Icon.png"
+												alt=""
+											/>WBTC
+										</div>
+										<div class="cell">1%</div>
+										<div class="cell">0</div>
+										<div class="cell">
+											<button id="collateral-btn">
+												<div
+													class="button"
+													id="collateral-icon"
+												></div>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="borrow-market-container markets">
+							<h3 class="table-title">Borrow Markets</h3>
+							<div class="market-table borrow-table">
+								<div class="table-header">
+									<div class="row header">
+										<div class="cell asset-cell">Asset</div>
+										<div class="cell">Borrow APY</div>
+										<div class="cell">Total Borrow</div>
+										<div class="cell available">Available Borrow</div>
+									</div>
+								</div>
+								<div class="table-data">
+									<div class="row table-data-row">
+										<div class="cell asset-cell">
+											<img
+												src="./BrandingAssets-main/Brand/Icon.png"
+												alt=""
+											/>WBTC
+										</div>
+										<div class="cell">1%</div>
+										<div class="cell">0</div>
+										<div class="cell available">0</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="footer-content">
+					<div class="logo-container">
+						<img
+							src="./BrandingAssets-main/Brand/LogoWhite.svg"
+							alt="Sirio"
+						/>
+					</div>
+					<div class="text-container">
+						Developed with ❤️ by
+						<a href="https://www.astrid.network/" target="_blank">
+							Astrid Network
+						</a>
+					</div>
+					<div class="footer-social">
+						<a href="">
+							<img
+								src="./BrandingAssets-main/Icons/website_white.svg"
+								alt="Website"
+							/> </a
+						><a href="">
+							<img
+								src="./BrandingAssets-main/Icons/docs_white.svg"
+								alt="Docs"
+							/>
+						</a>
+						<a href="">
+							<img
+								src="./BrandingAssets-main/Icons/twitter_white.svg"
+								alt="Twitter"
+							/>
+						</a>
+						<a href="">
+							<img
+								src="./BrandingAssets-main/Icons/telegram_white.svg"
+								alt="Telegram"
+							/>
+						</a>
+						<a href=""
+							><img
+								src="./BrandingAssets-main/Icons/discord_white.svg"
+								alt="Discord"
+						/></a>
+						<a href=""
+							><img
+								src="./BrandingAssets-main/Icons/github_white.svg"
+								alt="Github"
+						/></a>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="./landing-files/app.js"></script>
+	</body>
+</html>
