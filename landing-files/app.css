@@ -34,12 +34,6 @@ body {
   background: linear-gradient(to right, rgba(131, 139, 197, 0.2), rgba(131, 139, 197, 0.4), rgba(131, 139, 197, 0.4), rgba(131, 139, 197, 0.2));
 }
 
-body .body-container {
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-}
-
 body .primary-btn {
   font-family: "Gilroy-Bold", sans-serif;
   padding: 15px 30px;
@@ -51,6 +45,9 @@ body .primary-btn {
 }
 
 body .content-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
   padding: 20px;
 }
 
@@ -198,7 +195,6 @@ body .markets-status .markets .market-table {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
   margin-top: 10px;
 }
 
@@ -243,6 +239,34 @@ body .markets-status .markets .market-table .available {
       flex-basis: 40%;
 }
 
+body .markets-status .markets .market-table #collateral-btn {
+  border-radius: 80px;
+  width: 40px;
+  height: 10px;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(131, 139, 197, 0.5);
+}
+
+body .markets-status .markets .market-table #collateral-btn .button {
+  background-color: #3251bf;
+  margin-top: -3px;
+  height: 15px;
+  width: 15px;
+  border-radius: 80px;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+body .markets-status .markets .market-table #collateral-btn .button.on {
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+}
+
 body .markets-status .markets .market-table .table-data .table-data-row {
   cursor: pointer;
   margin-bottom: 5px;
@@ -256,4 +280,41 @@ body .markets-status .markets .market-table .table-data .table-data-row img {
 body .markets-status .markets .market-table .table-data .table-data-row:hover {
   background-color: rgba(211, 211, 211, 0.6);
   border-radius: 7px;
+}
+
+body footer {
+  margin-top: 60px;
+  width: 100%;
+  background-color: #3251bf;
+  opacity: 1;
+}
+
+body footer .footer-content {
+  max-width: 1400px;
+  margin: auto;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 20px;
+}
+
+body footer .footer-content img {
+  width: 80px;
+}
+
+body footer .footer-content a {
+  color: white;
+}
+
+body footer .footer-social img {
+  height: 24px;
+  width: 24px;
+  margin-right: 15px;
 }
