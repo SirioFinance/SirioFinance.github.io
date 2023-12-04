@@ -140,6 +140,10 @@ body {
 		.markets-container {
 			display: flex;
 			gap: 30px;
+
+			@media screen and (max-width: 950px) {
+				flex-direction: column;
+			}
 		}
 		.markets {
 			background-color: white;

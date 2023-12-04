@@ -170,6 +170,15 @@ body .markets-status .markets-container {
   gap: 30px;
 }
 
+@media screen and (max-width: 950px) {
+  body .markets-status .markets-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 body .markets-status .markets {
   background-color: white;
   min-height: 700px;
