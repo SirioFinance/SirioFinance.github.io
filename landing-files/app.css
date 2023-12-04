@@ -216,7 +216,7 @@ body .markets-status .markets .market-table .row {
 }
 
 body .markets-status .markets .market-table .row.header {
-  font-weight: bold;
+  font-family: "Gilroy-Bold", sans-serif;
 }
 
 body .markets-status .markets .market-table .cell {
