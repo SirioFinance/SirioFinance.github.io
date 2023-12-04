@@ -278,6 +278,11 @@ body .first-container {
           animation: fade-in 2500ms ease-in-out;
 }
 
+body .first-container a {
+  text-decoration: none;
+  color: white;
+}
+
 @media screen and (max-width: 450px) {
   body .first-container {
     min-height: 100vh;

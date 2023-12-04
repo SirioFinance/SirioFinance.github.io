@@ -220,6 +220,10 @@ body {
 		opacity: 1;
 		animation: fade-in 2500ms ease-in-out;
 
+		a {
+			text-decoration: none;
+			color: white;
+		}
 		@media screen and (max-width: 450px) {
 			min-height: 100vh;
 			min-height: 100svh;
