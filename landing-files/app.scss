@@ -1,8 +1,15 @@
 $primary-col: #3251bf;
+$line-value: 20%;
 
 @font-face {
 	font-family: "Gilroy-Regular";
 	src: url("./Gilroy/Gilroy-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy-SemiBold";
+	src: url("./Gilroy/Gilroy-SemiBold.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -129,7 +136,7 @@ body {
 				height: 6px;
 				background: linear-gradient(
 					90deg,
-					$primary-col 20%,
+					$primary-col $line-value,
 					rgba(#838bc5, 0.5) 9%
 				);
 			}
@@ -260,6 +267,199 @@ body {
 				height: 24px;
 				width: 24px;
 				margin-right: 15px;
+			}
+		}
+	}
+	.popup-container {
+		position: fixed;
+		inset: 0;
+		background-color: rgba($color: $primary-col, $alpha: 0.2);
+		display: flex;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+		animation: fadeOut 1s;
+
+		.popup-content {
+			position: relative;
+			width: 100%;
+			max-width: 400px;
+			background-color: white;
+			border-radius: 15px;
+			display: flex;
+			align-items: center;
+			padding: 20px;
+			flex-direction: column;
+			width: 100%;
+			.asset-info {
+				text-align: center;
+				img {
+					height: 30px;
+					width: 30px;
+				}
+				h4 {
+					font-weight: 100;
+					font-family: "Gilroy-Bold", sans-serif;
+				}
+			}
+			.supply-active {
+				.available {
+					display: none;
+				}
+				#supply-option {
+					border-bottom: 3px solid $primary-col;
+				}
+				.withdraw-buttons {
+					display: none;
+				}
+			}
+			.withdraw-active {
+				.usage {
+					display: none;
+				}
+				#withdraw-option {
+					border-bottom: 3px solid $primary-col;
+				}
+				.supply-buttons {
+					display: none !important;
+				}
+			}
+			.borrow-active {
+				#borrow-option {
+					border-bottom: 3px solid $primary-col;
+				}
+				.repay-buttons {
+					display: none !important;
+				}
+			}
+			.repay-active {
+				#repay-option {
+					border-bottom: 3px solid $primary-col;
+				}
+				.borrow-buttons {
+					display: none;
+				}
+			}
+			.popup-options {
+				width: 100%;
+				display: none;
+				.options-buttons {
+					display: flex;
+					gap: 5px;
+					button {
+						color: #3251bf;
+						background-color: transparent;
+						padding: 15px;
+						width: 100%;
+						border: none;
+						outline: none;
+						cursor: pointer;
+						margin-bottom: 20px;
+						margin-top: 20px;
+						border-bottom: 3px solid transparent;
+						font-weight: 900;
+					}
+
+					button:hover {
+						border-bottom: 3px solid $primary-col;
+					}
+				}
+				.popup-info-container {
+					width: 100%;
+					.info-dashboard-section {
+						width: 100%;
+						position: relative;
+						background-color: rgba(lightgray, 0.6);
+						padding: 10px;
+						border-radius: 10px;
+						h2 {
+							position: absolute;
+							inset: 0;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							font-weight: 100;
+							font-size: 30px;
+							font-family: "Gilroy-SemiBold", sans-serif;
+						}
+						.max {
+							span {
+								background-color: $primary-col;
+								color: white;
+								padding: 3px 5px;
+								border-radius: 3px;
+							}
+							margin-bottom: 5px;
+						}
+						p {
+							font-size: 12px;
+							text-align: right;
+						}
+					}
+					.all-info {
+						.info {
+							display: flex;
+							width: 100%;
+							justify-content: space-between;
+						}
+						margin: 30px 0;
+						display: flex;
+						flex-direction: column;
+						gap: 15px;
+					}
+				}
+				.buttons-container {
+					width: 100%;
+					.supply-buttons,
+					.repay-buttons {
+						display: flex;
+						gap: 20px;
+					}
+
+					button {
+						width: 100%;
+					}
+				}
+			}
+			.borrow-popup {
+				.popup-info-container {
+					.info-dashboard-section {
+						padding: 20px 10px;
+					}
+				}
+			}
+			.active {
+				display: block;
+			}
+			.close-button {
+				position: absolute;
+				left: 20px;
+				top: 10px;
+				outline: none;
+				border: none;
+				padding: 0;
+				background-color: transparent;
+				font-size: 30px;
+				color: #333;
+				cursor: pointer;
+				transition: all 200ms;
+
+				&:hover {
+					color: $primary-col;
+				}
+			}
+		}
+		&.popup-active {
+			display: flex;
+			animation: fadeIn 1000ms;
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
 			}
 		}
 	}

@@ -76,7 +76,25 @@
 									</div>
 								</div>
 								<div class="table-data">
-									<div class="row table-data-row">
+									<div class="row table-data-row supply-market-row">
+										<div class="cell asset-cell">
+											<img
+												src="./BrandingAssets-main/Brand/Icon.png"
+												alt=""
+											/>WBTC
+										</div>
+										<div class="cell">1%</div>
+										<div class="cell">0</div>
+										<div class="cell">
+											<button id="collateral-btn">
+												<div
+													class="button"
+													id="collateral-icon"
+												></div>
+											</button>
+										</div>
+									</div>
+									<div class="row table-data-row supply-market-row">
 										<div class="cell asset-cell">
 											<img
 												src="./BrandingAssets-main/Brand/Icon.png"
@@ -109,7 +127,18 @@
 									</div>
 								</div>
 								<div class="table-data">
-									<div class="row table-data-row">
+									<div class="row table-data-row borrow-market-row">
+										<div class="cell asset-cell">
+											<img
+												src="./BrandingAssets-main/Brand/Icon.png"
+												alt=""
+											/>WBTC
+										</div>
+										<div class="cell">1%</div>
+										<div class="cell">0</div>
+										<div class="cell available">0</div>
+									</div>
+									<div class="row table-data-row borrow-market-row">
 										<div class="cell asset-cell">
 											<img
 												src="./BrandingAssets-main/Brand/Icon.png"
@@ -177,6 +206,123 @@
 					</div>
 				</div>
 			</footer>
+			<div class="popup-container">
+				<div class="popup-content">
+					<div class="asset-info">
+						<img src="./BrandingAssets-main/Brand/Icon.png" alt="" />
+						<h4 id="popup-asset-name">WBTC</h4>
+					</div>
+					<div class="popup-options supply-popup supply-active">
+						<div class="options-buttons supply-options">
+							<button id="supply-option">Supply</button>
+							<button id="withdraw-option">Withdraw</button>
+						</div>
+						<div class="popup-info-container">
+							<div class="main-info-container">
+								<div class="info-dashboard-section">
+									<h2 class="dashboard-main-balance">0.0</h2>
+									<div class="dashboard-mini-info">
+										<p class="max">
+											<span> Max </span>
+										</p>
+										<p>USDC</p>
+										<p class="mini-info-balance">~$0.0</p>
+									</div>
+								</div>
+								<div class="all-info">
+									<div class="info">
+										<p>Supply APY</p>
+										<p id="popup-supply-apy">1.80%</p>
+									</div>
+									<div class="info">
+										<p>Supply Balance</p>
+										<p id="popup-supply-balance">$0</p>
+									</div>
+									<div class="info">
+										<p>Borrow Limit</p>
+										<p id="popup-supply-limit">$0</p>
+									</div>
+									<div class="info">
+										<p class="usage">Borrow Usage</p>
+										<p class="available">
+											Borrow Limit Used -> Available
+										</p>
+										<p id="popup-supply-usage">$0</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="buttons-container">
+							<div class="supply-buttons">
+								<button id="approve-btn" class="primary-btn">
+									1. Approve
+								</button>
+								<button id="supply-btn" class="primary-btn">
+									2. Supply
+								</button>
+							</div>
+							<div class="withdraw-buttons">
+								<button id="withdraw-btn" class="primary-btn">
+									Withdraw
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="popup-options borrow-popup borrow-active">
+						<div class="options-buttons supply-options">
+							<button id="borrow-option">Borrow</button>
+							<button id="repay-option">Repay</button>
+						</div>
+						<div class="popup-info-container">
+							<div class="main-info-container">
+								<div class="info-dashboard-section">
+									<h2 class="dashboard-main-balance">0.0</h2>
+									<div class="dashboard-mini-info">
+										<p>USDC</p>
+										<p id="mini-info-balance">~$0.0</p>
+									</div>
+								</div>
+								<div class="all-info">
+									<div class="info">
+										<p>Borrow APY</p>
+										<p id="popup-borrow-apy">1.80%</p>
+									</div>
+									<div class="info">
+										<p>Borrow Balance</p>
+										<p id="popup-borrow-balance">$0</p>
+									</div>
+									<div class="info">
+										<p>Borrow Limit</p>
+										<p id="popup-borrow-limit">$0</p>
+									</div>
+									<div class="info">
+										<p class="usage">Borrow Usage</p>
+										<p id="popup-borrow-usage">$0</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="buttons-container">
+							<div class="borrow-buttons">
+								<button id="borrow-btn" class="primary-btn">
+									Borrow
+								</button>
+							</div>
+							<div class="repay-buttons">
+								<button id="approve-btn" class="primary-btn">
+									1. Approve
+								</button>
+								<button id="repay-btn" class="primary-btn">
+									2. Repay
+								</button>
+							</div>
+						</div>
+					</div>
+					<button id="popup-close-button" class="close-button">
+						&leftarrow;
+					</button>
+				</div>
+			</div>
 		</div>
 		<script src="./landing-files/app.js"></script>
 	</body>
