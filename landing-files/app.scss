@@ -42,7 +42,9 @@ body {
 		rgba(#838bc5, 0.4),
 		rgba(#838bc5, 0.2)
 	);
-
+	button {
+		border-radius: 4px;
+	}
 	.primary-btn {
 		font-family: "Gilroy-Bold", sans-serif;
 		padding: 15px 30px;
@@ -76,6 +78,7 @@ body {
 				font-size: 16px;
 				padding: 8px 25px;
 				cursor: pointer;
+				font-family: "Gilroy-SemiBold", sans-serif;
 			}
 		}
 	}
@@ -91,15 +94,17 @@ body {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: center;
 			border: 8px solid $primary-col;
 
 			p {
 				font-weight: 900;
+				font-size: 16px;
+				margin-top: 15px;
 			}
 
 			.net-value {
-				margin-top: 20px;
+				font-size: 24px;
+				margin-top: 15px;
 			}
 		}
 	}
@@ -261,6 +266,11 @@ body {
 			a {
 				color: white;
 			}
+			@media screen and (min-width: 950px) {
+				.text-container {
+					margin-left: 175px;
+				}
+			}
 		}
 		.footer-social {
 			img {
@@ -276,22 +286,60 @@ body {
 		background-color: rgba($color: $primary-col, $alpha: 0.2);
 		display: flex;
 		display: none;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		padding: 20px;
 		animation: fadeOut 1s;
+		.close-button {
+			transform: translate(-170px, 50px);
+			z-index: 100;
+			outline: none;
+			border: none;
+			padding: 0;
+			background-color: transparent;
+			font-size: 30px;
+			color: #333;
+			cursor: pointer;
+			transition: all 200ms;
 
-		.popup-content {
+			&:hover {
+				color: $primary-col;
+			}
+		}
+
+		&.popup-active {
+			display: flex;
+			animation: fadeIn 1000ms;
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+		}
+		.popup-wallet-container,
+		.popup-markets-container,
+		.popup-transaction-container {
 			position: relative;
 			width: 100%;
 			max-width: 400px;
 			background-color: white;
-			border-radius: 15px;
+			border-radius: 10px;
 			display: flex;
 			align-items: center;
 			padding: 20px;
 			flex-direction: column;
 			width: 100%;
+			display: none;
+
+			&.show {
+				display: flex;
+			}
+		}
+		.popup-markets-container {
 			.asset-info {
 				text-align: center;
 				img {
@@ -382,13 +430,20 @@ body {
 							font-weight: 100;
 							font-size: 30px;
 							font-family: "Gilroy-SemiBold", sans-serif;
+							z-index: 1;
+							width: max-content;
+							margin: auto;
 						}
 						.max {
-							span {
+							z-index: 10;
+							button {
 								background-color: $primary-col;
 								color: white;
 								padding: 3px 5px;
 								border-radius: 3px;
+								outline: none;
+								border: none;
+								cursor: pointer;
 							}
 							margin-bottom: 5px;
 						}
@@ -412,7 +467,8 @@ body {
 				.buttons-container {
 					width: 100%;
 					.supply-buttons,
-					.repay-buttons {
+					.repay-buttons,
+					.risk-buttons {
 						display: flex;
 						gap: 20px;
 					}
@@ -432,33 +488,107 @@ body {
 			.active {
 				display: block;
 			}
-			.close-button {
-				position: absolute;
-				left: 20px;
-				top: 10px;
-				outline: none;
-				border: none;
-				padding: 0;
-				background-color: transparent;
-				font-size: 30px;
-				color: #333;
-				cursor: pointer;
-				transition: all 200ms;
 
-				&:hover {
-					color: $primary-col;
+			.risk-popup {
+				.risk-circle {
+					transform: rotate(-45deg);
+					margin: auto;
+					height: 150px;
+					width: 150px;
+					border-radius: 600px;
+					border-right: 8px solid lightgray;
+					border-bottom: 8px solid red;
+					border-left: 8px solid red;
+					border-top: 8px solid red;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-family: "Gilroy-Bold", sans-serif;
+					font-size: 40px;
+					margin-top: 40px;
+
+					p {
+						transform: rotate(45deg);
+					}
+				}
+				.risk-text {
+					margin: 40px 0;
+					font-weight: 100;
+					line-height: 20px;
+
+					a {
+						font-family: "Gilroy-SemiBold", sans-serif;
+						font-weight: 100;
+					}
 				}
 			}
 		}
-		&.popup-active {
-			display: flex;
-			animation: fadeIn 1000ms;
-			@keyframes fadeIn {
+		.popup-wallet-container {
+			h3 {
+				font-size: 32px;
+				margin-bottom: 40px;
+			}
+			.wallets-container {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+
+				button {
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					img {
+						height: 30px;
+						width: auto;
+					}
+					width: 100%;
+					border: none;
+					outline: none;
+					background-color: transparent;
+					cursor: pointer;
+					padding: 40px 0;
+					font-size: 20px;
+					&:hover {
+						background-color: rgba(lightgray, 0.5);
+					}
+					border-bottom: 1px solid lightgray;
+					border-bottom-left-radius: 0;
+					border-bottom-right-radius: 0;
+					&:nth-child(3) {
+						border: none;
+					}
+				}
+			}
+		}
+		.popup-transaction-container {
+			padding: 100px 0;
+			.loading-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 20px;
+				.loader {
+					border: 8px solid #f3f3f3;
+					border-top: 8px solid $primary-col;
+					border-radius: 50%;
+					width: 60px;
+					height: 60px;
+					animation: spin 2s linear infinite;
+				}
+			}
+			.completed-container {
+				text-align: center;
+				p {
+					margin-bottom: 20px;
+				}
+			}
+
+			@keyframes spin {
 				0% {
-					opacity: 0;
+					transform: rotate(0deg);
 				}
 				100% {
-					opacity: 1;
+					transform: rotate(360deg);
 				}
 			}
 		}
