@@ -39,7 +39,7 @@
 				<div class="center-net-status">
 					<div class="center-circle">
 						<p>Net Apy</p>
-						<p class="net-value" id="net-value">___</p>
+						<p class="net-value" id="net-value">---</p>
 					</div>
 				</div>
 				<div class="balance-status">
@@ -207,7 +207,10 @@
 				</div>
 			</footer>
 			<div class="popup-container">
-				<div class="popup-content">
+				<button id="popup-close-button" class="close-button">
+					x
+				</button>
+				<div class="popup-markets-container">
 					<div class="asset-info">
 						<img src="./BrandingAssets-main/Brand/Icon.png" alt="" />
 						<h4 id="popup-asset-name">WBTC</h4>
@@ -223,7 +226,7 @@
 									<h2 class="dashboard-main-balance">0.0</h2>
 									<div class="dashboard-mini-info">
 										<p class="max">
-											<span> Max </span>
+											<button id="max-btn">Max</button>
 										</p>
 										<p>USDC</p>
 										<p class="mini-info-balance">~$0.0</p>
@@ -318,9 +321,71 @@
 							</div>
 						</div>
 					</div>
-					<button id="popup-close-button" class="close-button">
-						&leftarrow;
-					</button>
+					<div class="popup-options risk-popup">
+						<div class="risk-circle"><p>&nbsp;75%</p></div>
+						<div class="risk-text">
+							The probability shown above represents the likelihood of
+							your loan being liquidated, as calculated by our model.
+							This model has been trained with data from millions of
+							loans and dozens of variables, including your collateral
+							and its allocations, global market conditions, and more.
+							If the probability exceeds 50%, we recommend reducing
+							the amount of assets you have borrowed or increasing
+							your collateral. Otherwise, you may be more susceptible
+							to liquidation.
+							<a href=""> Read the docs to know more. </a>
+						</div>
+						<div class="buttons-container">
+							<div class="risk-buttons">
+								<button id="risk-continue-btn" class="primary-btn">
+									Continue
+								</button>
+								<button id="risk-back-btn" class="primary-btn">
+									Go Back
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="popup-wallet-container">
+					<h3>Connect Wallet</h3>
+					<div class="wallets-container">
+						<button id="metamask-btn">
+							<img
+								src="./BrandingAssets-main/Icons/metamask.svg"
+								alt=""
+							/>
+							<p>Metamask</p>
+						</button>
+						<button id="hashpack-btn">
+							<img
+								src="./BrandingAssets-main/Icons/hashpack.png"
+								alt=""
+							/>HashPack
+						</button>
+						<button id="blade-btn">
+							<img
+								src="./BrandingAssets-main/Icons/blade.png"
+								alt=""
+							/>Blade
+						</button>
+					</div>
+				</div>
+				<div class="popup-transaction-container">
+					<div class="loading-container">
+						<div class="loader"></div>
+						<p>Waiting For Confirmation</p>
+					</div>
+					<div class="completed-container">
+						<div class="successful-container">
+							<p>&#9989;</p>
+							<p>Transaction Completed Successfully.</p>
+						</div>
+						<div class="failed-container">
+							<p>&#10060;</p>
+							<p>Transaction Failed.</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

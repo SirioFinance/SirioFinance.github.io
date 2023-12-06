@@ -1,3 +1,8 @@
+window.onbeforeunload = function () {
+	if (location.protocol !== "https:")
+		location.replace("https://" + location.href.split("//")[1]);
+};
+
 const collateralBtn = document.querySelectorAll("#collateral-btn");
 const collateralIcon = document.querySelectorAll("#collateral-icon");
 let collateral = true;
@@ -24,16 +29,25 @@ const borrowMarketData = document.querySelectorAll(
 
 const popupContainer = document.querySelector(".popup-container");
 
-const popupActive = (popup) => {
+const marketsContainer = document.querySelector(
+	".popup-markets-container"
+);
+const walletContainer = document.querySelector(
+	".popup-wallet-container"
+);
+const transactionContainer = document.querySelector(
+	".popup-transaction-container"
+);
+
+const popupActive = () => {
 	popupContainer.classList.add("popup-active");
 	document.body.style.overflowY = "hidden";
-	document.querySelector(popup).classList.add("active");
 };
 
 const popupClose = () => {
 	popupContainer.classList.remove("popup-active");
 	document.body.style.overflowY = "scroll";
-	document.querySelector(".active").classList.remove("active");
+	document.querySelector(".show").classList.remove("show");
 };
 
 popupContainer.onclick = (click) => {
@@ -47,12 +61,22 @@ document.getElementById("popup-close-button").onclick = () => {
 
 supplyMarketData.forEach((el) => {
 	el.onclick = () => {
-		popupActive(".supply-popup");
+		popupActive();
+		marketsContainer.classList.add("show");
+		if (document.querySelector(".active")) {
+			document.querySelector(".active").classList.remove("active");
+		}
+		document.querySelector(".supply-popup").classList.add("active");
 	};
 });
 borrowMarketData.forEach((el) => {
 	el.onclick = () => {
-		popupActive(".borrow-popup");
+		popupActive();
+		marketsContainer.classList.add("show");
+		if (document.querySelector(".active")) {
+			document.querySelector(".active").classList.remove("active");
+		}
+		document.querySelector(".borrow-popup").classList.add("active");
 	};
 });
 
@@ -82,4 +106,26 @@ repayOptionBtn.onclick = () => {
 borrowOptionBtn.onclick = () => {
 	borrowContainer.classList.remove("repay-active");
 	borrowContainer.classList.add("borrow-active");
+};
+
+const borrowBtn = document.getElementById("borrow-btn");
+const riskBackBtn = document.getElementById("risk-back-btn");
+
+const riskContainer = document.querySelector(".risk-popup");
+
+borrowBtn.onclick = () => {
+	document.querySelector(".active").classList.remove("active");
+	riskContainer.classList.add("active");
+};
+
+riskBackBtn.onclick = () => {
+	document.querySelector(".active").classList.remove("active");
+	borrowContainer.classList.add("active");
+};
+
+connectWalletBtn = document.getElementById("connect-wallet-btn");
+
+connectWalletBtn.onclick = () => {
+	popupActive();
+	walletContainer.classList.add("show");
 };
