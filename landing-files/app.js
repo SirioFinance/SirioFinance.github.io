@@ -1,3 +1,8 @@
+window.onbeforeunload = function () {
+	if (location.protocol !== "https:")
+		location.replace("https://" + location.href.split("//")[1]);
+};
+
 const collateralBtn = document.querySelectorAll("#collateral-btn");
 const collateralIcon = document.querySelectorAll("#collateral-icon");
 let collateral = true;

@@ -56,6 +56,9 @@ document
 
 window.onbeforeunload = function () {
 	window.scrollTo(0, 0);
+
+	if (location.protocol !== "https:")
+		location.replace("https://" + location.href.split("//")[1]);
 };
 
 document.getElementById("popup-btn").addEventListener("click", () => {
