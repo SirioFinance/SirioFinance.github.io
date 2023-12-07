@@ -22,6 +22,15 @@
 			referrerpolicy="no-referrer"
 		/>
 		<link rel="stylesheet" href="./landing-files/style.css" />
+		<script>
+			if (window.location.protocol === "http:") {
+				window.location.href =
+					"https:" +
+					window.location.href.substring(
+						window.location.protocol.length
+					);
+			}
+		</script>
 	</head>
 	<body>
 		<div class="sidebar-container" id="side-bar-container">

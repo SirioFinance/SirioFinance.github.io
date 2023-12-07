@@ -13,29 +13,37 @@
 			href="./BrandingAssets-main/Brand/Logo.svg"
 			type="image/x-icon"
 		/>
+		<script>
+			if (window.location.protocol === "http:") {
+				window.location.href =
+					"https:" +
+					window.location.href.substring(
+						window.location.protocol.length
+					);
+			}
+		</script>
 	</head>
 	<body>
 		<div class="body-container">
-			<div class="content-container">
-				<header>
-					<div class="logo">
-						<img
-							src="./BrandingAssets-main/Brand/Logo.svg"
-							alt="Sirio"
-						/>
-					</div>
-					<nav>
-						<button id="dashboard-btn">Dashboard</button>
-						<button id="markets-btn">Markets</button>
-						<button id="vote-btn">Vote</button>
-					</nav>
-					<div class="button">
-						<button id="connect-wallet-btn" class="primary-btn">
-							Connect Wallet
-						</button>
-					</div>
-				</header>
-
+			<header>
+				<div class="logo">
+					<img
+						src="./BrandingAssets-main/Brand/Logo.svg"
+						alt="Sirio"
+					/>
+				</div>
+				<nav>
+					<button id="dashboard-btn">Dashboard</button>
+					<button id="markets-btn">Markets</button>
+					<button id="vote-btn">Vote</button>
+				</nav>
+				<div class="button">
+					<button id="connect-wallet-btn" class="primary-btn">
+						Connect Wallet
+					</button>
+				</div>
+			</header>
+			<div class="content-container dashboard-container active-page">
 				<div class="center-net-status">
 					<div class="center-circle">
 						<p>Net Apy</p>
@@ -155,60 +163,99 @@
 					</div>
 				</div>
 			</div>
-			<footer>
-				<div class="footer-content">
-					<div class="logo-container">
-						<img
-							src="./BrandingAssets-main/Brand/LogoWhite.svg"
-							alt="Sirio"
-						/>
+			<div class="content-container status-container">
+				<div class="markets-inner-container">
+					<div class="search-container">
+						<h2>Individual Stats</h2>
+						<div class="search">
+							<input
+								type="text"
+								class="search-input"
+								id="search-input"
+								placeholder="Search for and address"
+							/>
+							<button id="search-btn" class="primary-btn">
+								Search
+							</button>
+						</div>
 					</div>
-					<div class="text-container">
-						Developed with ❤️ by
-						<a href="https://www.astrid.network/" target="_blank">
-							Astrid Network
-						</a>
+					<div class="global-stats-container">
+						<h2>Global Market Stats</h2>
+						<div class="stats">
+							<div class="stats-container">
+								<div class="market-size-container">
+									<p>Total Market Size</p>
+									<p id="market-size" class="balance">$0</p>
+								</div>
+								<div class="total-available-container">
+									<p>Total Available</p>
+									<p id="total-available" class="balance">$0</p>
+								</div>
+								<div class="total-borrows-container">
+									<p>Total Borrows</p>
+									<p id="total-borrows" class="balance">$0</p>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="footer-social">
-						<a href="">
-							<img
-								src="./BrandingAssets-main/Icons/website_white.svg"
-								alt="Website"
-							/> </a
-						><a href="">
-							<img
-								src="./BrandingAssets-main/Icons/docs_white.svg"
-								alt="Docs"
-							/>
-						</a>
-						<a href="">
-							<img
-								src="./BrandingAssets-main/Icons/twitter_white.svg"
-								alt="Twitter"
-							/>
-						</a>
-						<a href="">
-							<img
-								src="./BrandingAssets-main/Icons/telegram_white.svg"
-								alt="Telegram"
-							/>
-						</a>
-						<a href=""
-							><img
-								src="./BrandingAssets-main/Icons/discord_white.svg"
-								alt="Discord"
-						/></a>
-						<a href=""
-							><img
-								src="./BrandingAssets-main/Icons/github_white.svg"
-								alt="Github"
-						/></a>
+					<div class="market-info-container">
+						<div class="market-info">
+							<div class="asset-title-container">
+								<p class="asset-title">Asset</p>
+								<p class="asset-data" id="asset-name">
+									<img
+										src="./BrandingAssets-main/Brand/Icon.png"
+										alt=""
+									/>
+									WBTC
+								</p>
+							</div>
+							<div class="asset-all-info">
+								<div class="asset-info-flex">
+									<div class="asset-info">
+										<p class="asset-title">Total Supplied</p>
+										<p class="asset-data">$0</p>
+									</div>
+									<div class="asset-info">
+										<p class="asset-title">Supply APY</p>
+										<p class="asset-data">0%</p>
+									</div>
+									<div class="asset-info">
+										<p class="asset-title">Total Borrowed</p>
+										<p class="asset-data">$0</p>
+									</div>
+									<div class="asset-info">
+										<p class="asset-title">Borrow APY</p>
+										<p class="asset-data">0%</p>
+									</div>
+								</div>
+								<div class="asset-info-flex">
+									<div class="asset-info">
+										<p class="asset-title">Max LTV</p>
+										<p class="asset-data">0%</p>
+									</div>
+									<div class="asset-info">
+										<p class="asset-title">Liquidation Thresold</p>
+										<p class="asset-data">0%</p>
+									</div>
+									<div class="asset-info">
+										<p class="asset-title">Liquidation Penaly</p>
+										<p class="asset-data">0%</p>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</footer>
+			</div>
+			<div class="content-container vote-container"></div>
+
 			<div class="popup-container">
 				<button id="popup-close-button" class="close-button">
-					x
+					<img
+						src="./BrandingAssets-main/Icons/close-icon.png"
+						alt="x"
+					/>
 				</button>
 				<div class="popup-markets-container">
 					<div class="asset-info">
@@ -387,7 +434,114 @@
 						</div>
 					</div>
 				</div>
+				<div class="popup-search-container">
+					<div
+						class="loading-container search-containers current"
+						id="search-loading-container"
+					>
+						<div class="loader"></div>
+						<p>Fetching Data. Please Wait.</p>
+					</div>
+					<div
+						id="search-success-container"
+						class="search-containers"
+					>
+						<h2 id="search-address">Address</h2>
+						<div class="search-info">
+							<div class="center-net-status">
+								<div class="center-circle">
+									<p>Net Apy</p>
+									<p class="net-value" id="search-net-value">---</p>
+								</div>
+							</div>
+							<div class="balance-status">
+								<div class="balance-container">
+									<div class="supply-blc-container">
+										<p>Supply Balance</p>
+										<p id="search-supply-blc" class="balance">$0</p>
+									</div>
+									<div class="collateral-blc-container">
+										<p>Collateral Balance</p>
+										<p id="search-collateral-blc" class="balance">
+											$0
+										</p>
+									</div>
+									<div class="borrow-blc-container">
+										<p>Borrow Balance</p>
+										<p id="search-borrow-blc" class="balance">$0</p>
+									</div>
+								</div>
+								<div class="balance-line">
+									<p>Borrow Limit : 20%</p>
+									<div class="line"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="search-fail-container" class="search-containers">
+						<h2>Address</h2>
+						<p class="icon">&#10060;</p>
+						<p>
+							No address found. You submitted a wrong address or this
+							address has no open positions on Sirio.
+						</p>
+						<button id="search-back" class="primary-btn">
+							Go Back
+						</button>
+					</div>
+				</div>
 			</div>
+			<footer>
+				<div class="footer-content">
+					<div class="logo-container">
+						<img
+							src="./BrandingAssets-main/Brand/LogoWhite.svg"
+							alt="Sirio"
+						/>
+					</div>
+					<div class="text-container">
+						Developed with ❤️ by
+						<a href="https://www.astrid.network/" target="_blank">
+							Astrid Network
+						</a>
+					</div>
+					<div class="footer-social">
+						<a href="">
+							<img
+								src="./BrandingAssets-main/Icons/website_white.svg"
+								alt="Website"
+							/> </a
+						><a href="">
+							<img
+								src="./BrandingAssets-main/Icons/docs_white.svg"
+								alt="Docs"
+							/>
+						</a>
+						<a href="">
+							<img
+								src="./BrandingAssets-main/Icons/twitter_white.svg"
+								alt="Twitter"
+							/>
+						</a>
+						<a href="">
+							<img
+								src="./BrandingAssets-main/Icons/telegram_white.svg"
+								alt="Telegram"
+							/>
+						</a>
+						<a href=""
+							><img
+								src="./BrandingAssets-main/Icons/discord_white.svg"
+								alt="Discord"
+						/></a>
+						<a href=""
+							><img
+								src="./BrandingAssets-main/Icons/github_white.svg"
+								alt="Github"
+						/></a>
+					</div>
+				</div>
+			</footer>
 		</div>
 		<script src="./landing-files/app.js"></script>
 	</body>
