@@ -1,7 +1,19 @@
-window.onbeforeunload = function () {
-	if (location.protocol !== "https:")
-		location.replace("https://" + location.href.split("//")[1]);
+const dashboardBtn = document.getElementById("dashboard-btn");
+const statusBtn = document.getElementById("markets-btn");
+const voteBtn = document.getElementById("vote-btn");
+
+const pageSwitch = (el) => {
+	document
+		.querySelector(".active-page")
+		.classList.remove("active-page");
+	document
+		.querySelector(`.${el}-container`)
+		.classList.add("active-page");
 };
+
+dashboardBtn.onclick = () => pageSwitch("dashboard");
+statusBtn.onclick = () => pageSwitch("status");
+voteBtn.onclick = () => pageSwitch("vote");
 
 const collateralBtn = document.querySelectorAll("#collateral-btn");
 const collateralIcon = document.querySelectorAll("#collateral-icon");
@@ -123,9 +135,27 @@ riskBackBtn.onclick = () => {
 	borrowContainer.classList.add("active");
 };
 
-connectWalletBtn = document.getElementById("connect-wallet-btn");
+const connectWalletBtn = document.getElementById(
+	"connect-wallet-btn"
+);
 
 connectWalletBtn.onclick = () => {
 	popupActive();
 	walletContainer.classList.add("show");
+};
+
+const searchBtn = document.getElementById("search-btn");
+const searchContainer = document.querySelector(
+	".popup-search-container"
+);
+
+searchBtn.onclick = () => {
+	popupActive();
+	searchContainer.classList.add("show");
+
+	//search
+
+	//search-success
+
+	//search-failed
 };
