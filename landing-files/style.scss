@@ -39,6 +39,9 @@ body {
 	button {
 		border-radius: 5px;
 	}
+	a {
+		text-decoration: none !important;
+	}
 	.sidebar-container {
 		background-color: $primary-col;
 		padding: 30px 50px 50px 50px;
