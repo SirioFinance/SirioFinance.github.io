@@ -51,6 +51,9 @@ body {
 	button {
 		font-family: "Gilroy-Bold", sans-serif;
 	}
+	a {
+		text-decoration: none !important;
+	}
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -328,6 +331,12 @@ body {
 						font-size: 16px;
 						padding: 0 20px;
 						color: black;
+						font-family: "Gilroy-Regular";
+						transition: background 1200ms linear;
+
+						&:focus {
+							background-color: white;
+						}
 					}
 					button {
 						padding: 20px 40px;
@@ -406,6 +415,77 @@ body {
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+	.liquidations-container {
+		padding: 40px;
+		.liquidation-header {
+			font-size: 32px;
+			font-family: "Gilroy-SemiBold", sans-serif;
+			padding-left: 30px;
+		}
+		.liquidations-info-container {
+			background-color: white;
+			min-height: 600px;
+			width: 100%;
+			border-radius: 5px;
+			margin-top: 30px;
+			padding: 60px 30px;
+
+			.liquidation-info {
+				display: flex;
+				gap: 20px;
+				align-items: center;
+
+				.img-container {
+					height: 70px;
+					img {
+						height: 70px;
+					}
+				}
+				.input-whole-container {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding: 0 20px;
+					width: 100%;
+					border: 4px solid $primary-col;
+					border-radius: 10px;
+					height: 70px;
+					background: linear-gradient(
+						to right,
+						rgba(#838bc5, 0.2),
+						rgba(#838bc5, 0.4),
+						rgba(#838bc5, 0.4),
+						rgba(#838bc5, 0.2)
+					);
+					input {
+						outline: none;
+						border: none;
+						min-width: 100px;
+						width: 80%;
+						font-family: "Gilroy-SemiBold", sans-serif;
+						padding-left: 10px;
+						background-color: transparent;
+						&::placeholder {
+							color: black;
+							opacity: 1;
+							font-family: "Gilroy-Regular", sans-serif;
+						}
+
+						&::-ms-input-placeholder {
+							color: black;
+							font-family: "Gilroy-Regular", sans-serif;
+						}
+					}
+					font-size: 12px;
+					font-family: "Gilroy-Bold", sans-serif;
+				}
+				button {
+					border-radius: 10px;
+					height: 70px;
 				}
 			}
 		}
@@ -645,7 +725,6 @@ body {
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					font-family: "Gilroy-Bold", sans-serif;
 					font-size: 40px;
 					margin-top: 40px;
 
@@ -667,8 +746,9 @@ body {
 		}
 		.popup-wallet-container {
 			h3 {
-				font-size: 32px;
+				font-size: 25px;
 				margin-bottom: 40px;
+				font-family: "Gilroy-Bold", sans-serif;
 			}
 			.wallets-container {
 				display: flex;
@@ -685,18 +765,17 @@ body {
 					background-color: transparent;
 					cursor: pointer;
 					padding: 30px 0;
-					font-size: 25px;
+					font-size: 18px;
+					font-family: "Gilroy-Regular", sans-serif;
+					border-bottom: 1px solid lightgray;
 					&:hover {
 						background-color: rgba(lightgray, 0.5);
 					}
-					border-bottom: 1px solid lightgray;
-					border-bottom-left-radius: 0;
-					border-bottom-right-radius: 0;
 					&:nth-child(3) {
 						border: none;
 					}
 					img {
-						height: 30px;
+						height: 25px;
 						width: auto;
 					}
 				}
