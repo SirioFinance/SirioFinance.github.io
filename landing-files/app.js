@@ -159,3 +159,50 @@ searchBtn.onclick = () => {
 
 	//search-failed
 };
+
+const connectWallet = document.getElementById("connect-wallet-btn");
+const connect = async () => {
+	if (
+		typeof window != "undefined" &&
+		typeof window.ethereum != "undefined"
+	) {
+		try {
+			const accounts = await window.ethereum.request({
+				method: "eth_requestAccounts",
+			});
+			walletAddress = accounts[0];
+			connectWallet.innerHTML = `Connected: ${walletAddress.substring(
+				0,
+				6
+			)}...${walletAddress.substring(38)}`;
+		} catch (err) {
+			console.log(err.message);
+		}
+	} else {
+		window.alert("Please Install Metamask !");
+	}
+};
+
+const getCurrentAddress = async () => {
+	if (
+		typeof window != "undefined" &&
+		typeof window.ethereum != "undefined"
+	) {
+		try {
+			const accounts = await window.ethereum.request({
+				method: "eth_accounts",
+			});
+			if (accounts.length > 0) {
+				walletAddress = accounts[0];
+				connectWallet.innerHTML = `Connected: ${walletAddress.substring(
+					0,
+					6
+				)}...${walletAddress.substring(38)}`;
+			}
+		} catch (err) {
+			console.log(err.message);
+		}
+	}
+};
+getCurrentAddress();
+connectWallet.onclick = connect;
