@@ -204,5 +204,5 @@ const getCurrentAddress = async () => {
 		}
 	}
 };
-getCurrentAddress();
-connectWallet.onclick = connect;
+// getCurrentAddress();
+// connectWallet.onclick = connect;
