@@ -181,14 +181,6 @@ const scrolling = (position) => {
 			fifthHeight;
 	}
 
-	console.log(
-		position,
-		firstHeight +
-			secondHeight +
-			thirdHeight +
-			fourthHeight +
-			fifthHeight
-	);
 	sixthOpc =
 		position /
 		(firstHeight +
@@ -222,3 +214,20 @@ const scrolling = (position) => {
 window.onscroll = function (e) {
 	scrolling(window.scrollY);
 };
+
+const messageOpen = document.querySelectorAll(".message-open");
+const messageBox = document.querySelector(".message-box");
+
+messageOpen.forEach((el) => {
+	el.addEventListener("click", (e) => {
+		const target = e.target.getBoundingClientRect();
+		const left = target.x;
+		const top = target.bottom;
+		messageBox.style.left = `${left + (target.width - 100) / 2}px`;
+		messageBox.style.top = `${top}px`;
+		messageBox.classList.add("show");
+		setTimeout(() => {
+			messageBox.classList.remove("show");
+		}, 1000);
+	});
+});
