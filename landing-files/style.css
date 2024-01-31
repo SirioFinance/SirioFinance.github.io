@@ -681,21 +681,20 @@ body .fifth-container .text-container h1 {
 }
 
 body .fifth-container .image-container {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 	gap: 50px;
 }
 
 body .fifth-container .image-container div {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 	gap: 50px;
+	justify-content: space-between;
+	max-width: 250px;
 }
 
 body .fifth-container .image-container img {
 	height: 100px;
+	max-width: 250px;
 }
 
 @media screen and (max-width: 600px) {
