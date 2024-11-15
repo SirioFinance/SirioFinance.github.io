@@ -40,13 +40,7 @@ body {
 		color-stop(rgba(131, 139, 197, 0.4)),
 		to(rgba(131, 139, 197, 0.2))
 	);
-	background: linear-gradient(
-		to right,
-		rgba(131, 139, 197, 0.2),
-		rgba(131, 139, 197, 0.4),
-		rgba(131, 139, 197, 0.4),
-		rgba(131, 139, 197, 0.2)
-	);
+	background-color: #3251bf;
 }
 
 body button {
@@ -59,6 +53,7 @@ body a {
 
 body .sidebar-container {
 	background-color: #3251bf;
+	color: white;
 	padding: 30px 50px 50px 50px;
 	position: relative;
 	position: absolute;
@@ -143,7 +138,18 @@ body .sidebar-container ul li a {
 
 body .sidebar-container .logo img {
 	width: 125px;
+	
 }
+#canvas {
+	background-color: #3251bf;
+	background-image: linear-gradient(135deg, #43cbff 10%, #43cbff 100%);
+	cursor: pointer;
+	filter: blur(115px) saturate(1);
+	left: 0;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+  }
 
 body .sidebar-container .close {
 	position: absolute;
@@ -192,6 +198,7 @@ body .whole-container {
 }
 
 body .container {
+	color: white;
 	width: 100%;
 	max-width: 1000px;
 	margin: auto;
@@ -236,6 +243,7 @@ body
 	.heading-container
 	.heading {
 	font-family: "Gilroy-Bold", sans-serif;
+	color: white;
 	font-size: 48px;
 }
 
@@ -359,7 +367,7 @@ body .first-container .navbar {
 }
 
 body .first-container .navbar .logo img {
-	width: 90px;
+	width: 160px;
 }
 
 body .first-container .navbar .links {
@@ -393,7 +401,7 @@ body .first-container .navbar .links .other-links {
 }
 
 body .first-container .navbar .links .other-links a {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
@@ -401,6 +409,7 @@ body .first-container .navbar .links .social-links img {
 	margin-right: 30px;
 	height: 20px;
 	width: 20px;
+	filter: brightness(0) invert(1);
 }
 
 @media screen and (max-width: 800px) {
@@ -564,7 +573,7 @@ body .fourth-container .card {
 	position: relative;
 	padding-left: 40px;
 	padding-bottom: 20px;
-	color: black;
+	color: white;
 	margin: 0;
 }
 
