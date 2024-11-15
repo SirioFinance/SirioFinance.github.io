@@ -1,4 +1,5 @@
 {
+  "homepage": "https://siriofinance.github.io",
   "name": "sirio-app",
   "private": true,
   "version": "0.0.0",
@@ -47,6 +48,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "gh-pages": "^6.2.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
     "vite-plugin-react": "^4.0.1"
