@@ -14,4 +14,9 @@ export default defineConfig({
   build: {
     commonjsOptions: { transformMixedEsModules: true }, // Change
   },
+  server: {
+    mimeTypes: {
+      '.jsx': 'application/javascript', // Added to fix MIME type issue
+    },
+  },
 })
