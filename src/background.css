@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #3251bf;
+}
+
+#canvas {
+  background-color: #3251bf;
+  background-image: linear-gradient(135deg, #43cbff 10%, #43cbff 100%);
+  cursor: pointer;
+  filter: blur(115px) saturate(1);
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
