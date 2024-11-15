@@ -1,0 +1,40 @@
+body .balance-status {
+  color: white;
+}
+
+body .balance-status .balance-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: center;
+  gap: 10px;
+}
+
+body .balance-status .balance-container p {
+  font-size: 14px;
+}
+
+body .balance-status .balance-container .balance {
+  font-size: 25px;
+  margin-top: 10px;
+  font-weight: 900;
+  font-family: 'Gilroy-SemiBold';
+}
+
+body .balance-status .balance-line {
+  margin-top: 40px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+body .balance-status .balance-line p {
+  margin-right: 10px;
+}
