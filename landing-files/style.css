@@ -691,28 +691,24 @@ body .fifth-container .text-container h1 {
 
 body .fifth-container .image-container {
 	display: flex;
-	gap: 50px;
-}
-
-body .fifth-container .image-container div {
-	display: flex;
-	gap: 50px;
-	justify-content: space-between;
-	max-width: 250px;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	margin: 2rem 0;
 }
 
 body .fifth-container .image-container img {
-	height: 100px;
-	max-width: 250px;
+	max-width: 150px;
+	height: auto;
+	object-fit: contain;
 }
 
-@media screen and (max-width: 600px) {
-	body .fifth-container .image-container {
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
-		flex-direction: column;
-	}
+/* Per i loghi più larghi (Kabila, HashPack, Supra, Pyth) */
+body .fifth-container .image-container img[alt="Kabila"],
+body .fifth-container .image-container img[alt="hashpack"],
+body .fifth-container .image-container img[alt="supra"],
+body .fifth-container .image-container img[alt="pyth"] {
+	max-width: 250px;
 }
 
 body .sixth-container {
